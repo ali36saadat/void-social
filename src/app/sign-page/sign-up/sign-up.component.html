@@ -1,0 +1,84 @@
+<form class="sign__up-form" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+  <app-sign-alert
+    [message]="error"
+    *ngIf="error"
+    (close)="onHandlerClose()"
+  ></app-sign-alert>
+  <div class="sign__up-title">Sign Up Now</div>
+  <div class="sign__up--input">
+    <div formGroupName="name" class="sign__up--input-one">
+      <div class="sign__up--input-title">First Name</div>
+      <input
+        class="sign__up--input-element"
+        type="text"
+        formControlName="firstName"
+      />
+    </div>
+    <div formGroupName="name" class="sign__up--input-one">
+      <div class="sign__up--input-title">Last Name</div>
+      <input
+        class="sign__up--input-element"
+        type="text"
+        formControlName="lastName"
+      />
+    </div>
+    <div class="sign__up--input-two">
+      <div class="sign__up--input-title">Email Address</div>
+      <input
+        class="sign__up--input-element {{ status[emailStatus] }}"
+        type="email"
+        (input)="onEmailInputChange($event)"
+        formControlName="mail"
+      />
+      <span class="sign__up--input-error" *ngIf="emailStatus == '1'"
+        >Email Is Invalid</span
+      >
+    </div>
+    <div class="sign__up--input-two">
+      <div class="sign__up--input-title">Username</div>
+      <div class="sign__up--input-username">
+        <span class="sign__up--input-username-atsign">&#64;</span>
+        <input
+          class="sign__up--input-element sign__up--input-username-element {{
+            status[usernameStatus]
+          }}"
+          (input)="onUsernameInputChange($event)"
+          type="text"
+          formControlName="username"
+        />
+      </div>
+      <div class="sign__up--input-error" *ngIf="usernameStatus == '1'">
+        Username Is Invalid
+      </div>
+    </div>
+    <div class="sign__up--input-two">
+      <div class="sign__up--input-title">Password</div>
+      <input
+        class="sign__up--input-element {{ status[passwordStatus] }}"
+        type="password"
+        (input)="onPasswordInputChange($event)"
+        id="signUpInputPassword"
+        formControlName="password"
+        placeholder="min 8 characters and mix of letters, numbers & symbols"
+      />
+      <span class="sign__up--input-error" *ngIf="passwordStatus == '1'"
+        >Password Is Invalid</span
+      >
+    </div>
+  </div>
+  <div class="sign__up--submit">
+    <button
+      class="sign__up--submit-btn"
+      type="submit"
+      *ngIf="!isLoading"
+      [disabled]="!signUpForm.valid"
+    >
+      Sign Up
+    </button>
+    <span class="sign__up--submit-change" *ngIf="!isLoading">
+      Already Have An Account?
+      <a class="sign__up--submit-login" (click)="setSignPageValue()">log in</a>
+    </span>
+  </div>
+  <app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
+</form>

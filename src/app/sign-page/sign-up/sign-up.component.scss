@@ -1,0 +1,122 @@
+.sign__up {
+  &-title {
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 32px;
+  }
+
+  &--input {
+    display: grid;
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    gap: 20px 15px;
+    margin-bottom: 32px;
+
+    &-one {
+      grid-column: span 1 / span 1;
+      position: relative;
+    }
+
+    &-two {
+      grid-column: span 2 / span 2;
+      position: relative;
+    }
+
+    &-title {
+      color: #666666;
+      font-weight: 400;
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    &-element {
+      min-width: 250px;
+      width: 100%;
+      border: 1px solid rgba(102, 102, 102, 0.35);
+      height: 60px;
+      border-radius: 12px;
+      font-size: 20px;
+      padding: 0 10px;
+
+      &--green {
+        border: 2px solid hsl(120 100% 50% / 0.75);
+      }
+
+      &--red {
+        border: 2px solid hsl(0 100% 50% / 0.75);
+      }
+
+      &--yellow {
+        border: 2px solid hsl(60 100% 50% / 0.75);
+      }
+
+      &::placeholder {
+        font-size: 16px;
+        opacity: 50%;
+      }
+    }
+
+    &-description {
+      color: #666666;
+    }
+
+    &-username {
+      position: relative;
+
+      &-atsign {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 28px;
+        color: #666666;
+      }
+
+      &-element {
+        padding-left: 40px;
+      }
+    }
+
+    &-error {
+      color: red;
+      position: absolute;
+      right: 10px;
+      font-size: 15px;
+      top: 90px;
+    }
+  }
+
+  &--submit {
+    margin: auto;
+    margin-bottom: 32px;
+
+    &-btn {
+      border: none;
+      padding: 10px 15px;
+      border-radius: 60px;
+      background-color: hsl(46, 94%, 66%);
+      color: white;
+      font-weight: 400;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    &-change {
+      color: #333333;
+    }
+
+    &-login {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+}
+
+.ng-invalid {
+  .sign__up {
+    &--submit {
+      &-btn {
+        background-color: hsl(0, 0%, 83%);
+        cursor: default;
+      }
+    }
+  }
+}

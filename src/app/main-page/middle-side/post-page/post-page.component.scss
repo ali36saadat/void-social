@@ -1,0 +1,145 @@
+.post__page {
+  text-align: center;
+
+  &-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 20px;
+    border-bottom: 0.5px solid rgb(47, 51, 54);
+    padding-bottom: 20px;
+
+    &-left {
+      display: flex;
+      align-items: center;
+
+      &-title {
+        color: white;
+        font-size: 30px;
+        font-weight: 500;
+        padding-left: 20px;
+      }
+    }
+
+    &-right {
+      float: right;
+      &-save {
+        border: 1px solid white;
+        background-color: white;
+        padding: 5px 20px;
+        border-radius: 36px;
+        font-weight: 500;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &-post {
+    padding: 20px;
+
+    &-inputs {
+      display: grid;
+      grid-template-rows: repeat(6, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    &-name {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+
+      &first,
+      &last {
+        position: relative;
+
+        &-title {
+          position: absolute;
+          color: white;
+          left: 8px;
+          top: 4px;
+          font-size: 12px;
+        }
+
+        &-input {
+          width: 100%;
+          background-color: black;
+          color: white;
+          border: 1px solid white;
+          padding: 10px;
+          padding-top: 20px;
+          font-size: 24px;
+          border-radius: 6px;
+
+          &:focus {
+            border: 1px solid #fad357;
+            outline: 1px solid #fad357;
+          }
+        }
+      }
+    }
+
+    &-title {
+      position: relative;
+
+      &-title {
+        position: absolute;
+        color: white;
+        left: 8px;
+        top: 4px;
+        font-size: 12px;
+      }
+
+      &-input {
+        width: 100%;
+        background-color: black;
+        color: white;
+        border: 1px solid white;
+        padding: 10px;
+        padding-top: 20px;
+        font-size: 24px;
+        border-radius: 6px;
+
+        &:focus {
+          border: 1px solid #fad357;
+          outline: 1px solid #fad357;
+        }
+      }
+    }
+
+    &-content {
+      grid-row: span 3 / span 3;
+      position: relative;
+
+      &-title {
+        position: absolute;
+        color: white;
+        left: 8px;
+        top: 4px;
+        font-size: 12px;
+      }
+
+      &-textarea {
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        color: white;
+        border: 1px solid white;
+        padding: 10px;
+        padding-top: 20px;
+        font-size: 18px;
+        border-radius: 6px;
+        text-wrap: inherit;
+        resize: none;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
+        &:focus {
+          border: 1px solid #fad357;
+          outline: 1px solid #fad357;
+        }
+      }
+    }
+  }
+}

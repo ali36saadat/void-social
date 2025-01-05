@@ -1,0 +1,28 @@
+.container {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+}
+
+.side {
+  height: 100vh;
+
+  &-middle {
+    width: 500px;
+    max-width: 500px;
+    min-width: 500px;
+    margin: 0px 50px;
+    border-right: 0.5px solid rgb(47, 51, 54);
+    border-left: 0.5px solid rgb(47, 51, 54);
+  }
+
+  &-left,
+  &-right {
+    width: 400px;
+    // background: rgb(19, 19, 19);
+  }
+}

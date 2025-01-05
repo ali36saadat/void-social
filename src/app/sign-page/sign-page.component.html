@@ -1,0 +1,23 @@
+<div class="sign">
+  <div class="sign__side">
+    <app-sign-side></app-sign-side>
+  </div>
+
+  <div class="sign__page">
+    <app-sign-up
+      *ngIf="isSignUpPage == true"
+      (onChange)="pageChanger($event)"
+    ></app-sign-up>
+    <app-sign-in
+      *ngIf="isSignUpPage == false"
+      (onChange)="pageChanger($event)"
+    ></app-sign-in>
+    <div class="sign__page__logo">
+      <img
+        src="../../assets/pic/logo__pic.png"
+        alt="pyramidJSLogo"
+        class="sign__page__logo-pic"
+      />
+    </div>
+  </div>
+</div>

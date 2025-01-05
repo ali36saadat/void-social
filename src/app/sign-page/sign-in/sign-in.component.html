@@ -1,0 +1,45 @@
+<form class="sign__in-form" [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+  <app-sign-alert
+    [message]="error"
+    *ngIf="error"
+    (close)="onHandlerClose()"
+  ></app-sign-alert>
+  <div class="sign__in-title">Sign In</div>
+  <div class="sign__in--input">
+    <div class="sign__in--input-two">
+      <label class="sign__in--input-title" for="mailInput">Email</label>
+      <input
+        class="sign__in--input-element"
+        type="text"
+        id="mailInput"
+        formControlName="mail"
+      />
+    </div>
+    <div class="sign__in--input-two">
+      <label class="sign__in--input-title" for="passwordInput">Password</label>
+      <input
+        class="sign__in--input-element"
+        type="password"
+        id="passwordInput"
+        formControlName="password"
+      />
+    </div>
+  </div>
+  <div class="sign__in--submit">
+    <button
+      class="sign__in--submit-btn"
+      type="submit"
+      [disabled]="!signInForm.valid"
+      *ngIf="!isLoading"
+    >
+      Sign In
+    </button>
+    <span class="sign__in--submit-change" *ngIf="!isLoading">
+      Don’t Have An Acount?
+      <a class="sign__in--submit-signup" (click)="setSignPageValue()"
+        >Sign Up</a
+      >
+    </span>
+  </div>
+  <app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
+</form>

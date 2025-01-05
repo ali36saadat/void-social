@@ -1,0 +1,82 @@
+.profile {
+  //   height: 20vh;
+  border-bottom: 0.5px solid rgb(47, 51, 54);
+
+  &__info {
+    padding: 20px;
+
+    &-top {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: center;
+      margin-bottom: 10px;
+      &-name {
+        color: white;
+        font-size: 24px;
+        font-weight: 500;
+      }
+
+      &-username {
+        color: rgb(144, 144, 144);
+      }
+    }
+
+    &-right {
+      &-btn {
+        color: white;
+        border: 1px solid white;
+        padding: 8px 12px;
+        border-radius: 36px;
+        text-decoration: none;
+        float: right;
+
+        &:hover {
+          background-color: rgb(18, 18, 18);
+        }
+      }
+    }
+
+    &-middle {
+      border-top: 0.5px solid rgb(47, 51, 54);
+      padding-top: 10px;
+      &-bio {
+        color: white;
+        font-weight: 300;
+
+        &-title {
+          font-weight: 500;
+          color: rgb(144, 144, 144);
+        }
+      }
+    }
+
+    &-bottom {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      justify-items: center;
+      margin-top: 20px;
+      border-top: 0.5px solid rgb(47, 51, 54);
+      padding-top: 20px;
+      &-title {
+        color: rgb(144, 144, 144);
+        padding-left: 5px;
+      }
+
+      &-number {
+        color: white;
+      }
+    }
+
+    &-followings {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &-followers {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -1,1 +1,75 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@import "assets/ap/scss/variable";
+@import "assets/ap/scss/grid";
+@import "assets/ap/scss/responsive";
+@import "assets/ap/scss/style";
+
+*,
+body {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Poppins", "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+  color: black;
+}
+
+body {
+  background-color: black;
+  color: black;
+}
+
+textarea,
+input {
+  outline: none;
+  white-space: nowrap;
+  overflow: scroll;
+}
+
+.btn {
+  width: 150px;
+  border: 0;
+  border-radius: 60px;
+  padding: 15px 10px;
+  margin: 20px 0;
+  font-weight: 500;
+  cursor: pointer;
+
+  &-white {
+    background-color: white;
+    color: black;
+    font-size: 16px;
+  }
+
+  &-black {
+    background-color: black;
+    -webkit-box-shadow: inset 1px #fff;
+    -moz-box-shadow: inset 1px #fff;
+    box-shadow: inset inset 1px #fff;
+  }
+}
+
+.ipt {
+  width: 100%;
+  padding: 20px 10px;
+  margin: 5px 0;
+  border-radius: 6px;
+  font-weight: 400;
+  font-size: 16px;
+
+  &-sign {
+    color: white;
+    border: 1px solid gray;
+
+    &:focus {
+      border: 1px solid #ff9900;
+      -webkit-box-shadow: inset 1px #ff9900;
+      -moz-box-shadow: inset 1px #ff9900;
+      box-shadow: inset inset 1px #ff9900;
+    }
+  }
+}

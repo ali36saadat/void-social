@@ -1,0 +1,62 @@
+.side__right {
+  &-list {
+    padding-left: 100px;
+    padding-top: 100px;
+    color: white;
+
+    &-item {
+      display: flex;
+      background: none;
+      border: none;
+      font-size: 24px;
+      padding: 12px 24px;
+      cursor: pointer;
+
+      &-span {
+        color: white;
+        padding-left: 10px;
+        padding-top: 4px;
+      }
+
+      &-svg {
+        fill: white;
+      }
+
+      &--active {
+        background-color: rgb(36, 36, 36);
+        border-radius: 36px;
+      }
+
+      &:hover {
+        background-color: rgb(18, 18, 18);
+        border-radius: 36px;
+      }
+    }
+  }
+
+  &-prof {
+    display: grid;
+    grid-template-rows: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    border: 1px solid white;
+    padding: 20px;
+    border-radius: 24px;
+    width: 200px;
+    margin-left: 100px;
+    margin-top: 150px;
+
+    &-title {
+      color: white;
+      font-size: 20px;
+      font-weight: 300;
+      text-align: center;
+    }
+
+    &-context {
+      color: white;
+      font-size: 20px;
+      font-weight: 300;
+      text-align: center;
+    }
+  }
+}
