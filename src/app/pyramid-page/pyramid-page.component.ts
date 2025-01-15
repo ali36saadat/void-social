@@ -42,7 +42,6 @@ export class PyramidPageComponent implements AfterViewInit {
       if (setHeight) {
         setHeight.style.height = `${Math.floor(vid.duration) * playbackConst}px`;
       }
-      console.log('Video metadata loaded');
     });
 
     // Use requestAnimationFrame with throttling

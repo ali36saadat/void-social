@@ -1,0 +1,19 @@
+<div class="user__found">
+  <a class="user__found-container" routerLink="/mainPage/profile/{{ user.id }}">
+    <div class="user__found-left">
+      <div class="user__found-left-icon">
+        <img
+          class="user__found-left-icon-element"
+          src="../../../../../assets/pic/profile__icon.png"
+          alt="profileIcon"
+        />
+      </div>
+    </div>
+    <div class="user__found-right">
+      <div class="user__found-right-name">
+        {{ user.name.firstName }} {{ user.name.lastName }}
+      </div>
+      <div class="user__found-right-username">&commat;{{ user.username }}</div>
+    </div>
+  </a>
+</div>

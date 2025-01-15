@@ -1,22 +1,33 @@
-<form class="post__page" [formGroup]="newPostForm" (ngSubmit)="onSubmit()">
+<form class="post__page">
   <div class="post__page-header">
     <div class="post__page-header-left">
       <span class="post__page-header-left-title">New Post</span>
     </div>
     <div class="post__page-header-right">
-      <a class="post__page-header-right-save">POST</a>
+      <a class="post__page-header-right-save" (click)="onSubmit()">POST</a>
     </div>
   </div>
 
-  <form action="" class="post__page-post">
+  <form class="post__page-post" [formGroup]="newPostForm">
     <div class="post__page-post-inputs">
       <div class="post__page-post-title">
         <span class="post__page-post-title-title">Title</span>
-        <input class="post__page-post-title-input" type="text" name="" id="" />
+        <input
+          class="post__page-post-title-input"
+          type="text"
+          name=""
+          id=""
+          formControlName="postTitle"
+        />
       </div>
       <div class="post__page-post-content">
         <span class="post__page-post-content-title">Content</span>
-        <textarea class="post__page-post-content-textarea" name="" id=""></textarea>
+        <textarea
+          class="post__page-post-content-textarea"
+          name=""
+          id=""
+          formControlName="postContent"
+        ></textarea>
       </div>
     </div>
   </form>

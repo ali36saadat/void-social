@@ -1,25 +1,25 @@
 <div class="post__component">
   <div class="post__component_info">
-    <a href="" class="post__component_info-username">Ali36Saadat</a>
-    <span class="post__component_info-date"> - 14h</span>
+    <a
+      routerLink="/mainPage/profile/{{ post.userId }}"
+      class="post__component_info-username"
+      >{{ user.username }}</a
+    >
+    <span class="post__component_info-date"> - {{ time }}</span>
   </div>
   <div class="post__component_content">
-    <div class="post__component_content-title">what is it??</div>
-    <span class="post__component_content-text"
-      >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime illo
-      fuga dolorem, minus molestiae iusto dolor tempore vel ea blanditiis culpa
-      a necessitatibus fugit officia! Pariatur quibusdam doloremque tempore
-      incidunt!</span
-    >
+    <div class="post__component_content-title">{{ post.title }}</div>
+    <span class="post__component_content-text">{{ post.context }}</span>
   </div>
 
   <div class="post__component_detail">
-    <a href="" class="post__component_detail-like">
+    <button (click)="likePost()" class="post__component_detail-like">
       <svg
         width="25"
         height="24"
         viewBox="0 0 25 24"
         fill="none"
+        class="post__component_detail-like--{{ isLike }}"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -30,9 +30,12 @@
           stroke-linejoin="round"
         />
       </svg>
-      <span class="post__component_detail--number">36</span>
-    </a>
-    <a href="" class="post__component_detail-comment">
+      <span class="post__component_detail--number">{{ likeNumbers }}</span>
+    </button>
+    <a
+      routerLink="/mainPage/profile/{{ post.userId }}/{{ post.id }}"
+      class="post__component_detail-comment"
+    >
       <svg
         width="25"
         height="24"

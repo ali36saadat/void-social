@@ -1,0 +1,25 @@
+<div class="comment">
+  <div class="comment__post">
+    <app-post-component
+      *ngFor="let post of posts"
+      [post]="post"
+    ></app-post-component>
+  </div>
+  <form class="comment__new" [formGroup]="commentForm">
+    <span class="comment__new-title">New Comment</span>
+    <input
+      class="comment__new-input"
+      type="text"
+      name=""
+      id=""
+      formControlName="commentInput"
+    />
+    <button class="comment__new-send" (click)="comment()">&uarr;</button>
+  </form>
+  <div class="comment__list">
+    <app-comment-component
+      *ngFor="let comment of comments"
+      [comment]="comment"
+    ></app-comment-component>
+  </div>
+</div>

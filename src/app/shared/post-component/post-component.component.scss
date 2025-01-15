@@ -18,6 +18,7 @@
     padding: 10px 20px;
     border-radius: 12px;
     margin: 20px 0;
+
     &-text {
       color: white;
       font-weight: 300;
@@ -39,6 +40,16 @@
     &-like {
       display: flex;
       align-items: center;
+      background: none;
+      border: none;
+
+      &--false {
+        fill: none;
+      }
+
+      &--true {
+        fill: white;
+      }
     }
 
     &-comment {

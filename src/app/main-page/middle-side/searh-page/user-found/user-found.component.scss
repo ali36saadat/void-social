@@ -1,0 +1,43 @@
+.user__found {
+  border: 1px solid #e6e6e6;
+  width: 100%;
+  border: 1px solid rgb(47, 51, 54);
+
+  &-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &-left {
+    &-icon {
+      &-element {
+        width: 64px;
+        height: 64px;
+        filter: brightness(100);
+        // background: white;
+        border-radius: 36px;
+        padding: 6px;
+        margin: 12px 6px 6px 12px;
+        border: 1px solid white;
+      }
+    }
+  }
+
+  &-right {
+    float: right;
+
+    &-name {
+      padding-top: 12px;
+      padding-left: 6px;
+      color: white;
+      font-size: 24px;
+      font-weight: 500;
+    }
+
+    &-username {
+      color: rgb(108, 108, 108);
+      font-size: 16px;
+      padding-left: 6px;
+    }
+  }
+}

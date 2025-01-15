@@ -5,26 +5,17 @@
     </div>
   </div>
 
-  <form action="" class="search__edit">
-    <div class="search__edit-inputs">
-      <div class="search__edit-name">
-        <div class="search__edit-namefirst">
-          <span class="search__edit-namefirst-title">First Name</span>
-          <input class="search__edit-namefirst-input" type="text" />
-        </div>
-        <div class="search__edit-namelast">
-          <span class="search__edit-namelast-title">Last Name</span>
-          <input class="search__edit-namelast-input" type="text" />
-        </div>
-      </div>
-      <div class="search__edit-username">
-        <span class="search__edit-username-title">Username</span>
-        <input class="search__edit-username-input" type="text" name="" id="" />
-      </div>
-      <div class="search__edit-bio">
-        <span class="search__edit-bio-title">Bio</span>
-        <textarea class="search__edit-bio-textarea" name="" id=""></textarea>
+  <form action="" class="search__users">
+    <div class="search__users-inputs">
+      <div class="search__users-engine">
+        <span class="search__users-engine-title">Search Engine</span>
+        <input
+          class="search__users-engine-input"
+          (input)="changeSearchInput($event)"
+        />
       </div>
     </div>
   </form>
+
+  <app-user-found *ngFor="let user of users" [user]="user"></app-user-found>
 </div>

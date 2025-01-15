@@ -11,7 +11,6 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { AuthService } from '../auth.service';
-import { Observable } from 'rxjs';
 
 interface AuthResponseData {
   kind: string;
@@ -47,7 +46,7 @@ export class SignUpComponent implements OnInit {
   };
 
   constructor(
-    // private authService: AuthService,
+    private authService: AuthService,
     private http: HttpClient,
     private router: Router,
   ) {}
@@ -151,6 +150,31 @@ export class SignUpComponent implements OnInit {
   }
 
   onSubmit() {
+    this.isLoading = true;
+
+    const usernameValue = this.signUpForm.get('username')?.value;
+
+    this.authService.signup(
+      this.signUpForm.get('name')?.value,
+      usernameValue,
+      this.signUpForm.get('mail')?.value,
+      this.signUpForm.get('password')?.value,
+    );
+    // .subscribe(
+    //   (resData: any) => {
+    //     console.log(resData);
+    //     this.isLoading = false;
+    //     this.router.navigate(['/recipes']);
+    //   },
+    //   (errorMessage: any) => {
+    //     console.log(errorMessage);
+    //     this.error = errorMessage;
+    //     this.isLoading = false;
+    //   },
+    // );
+
+    this.signUpForm.reset();
+
     // let Auth: Observable<AuthResponseData>;
     // this.isLoading = true;
     // const usernameValue = this.signUpForm.get('username')?.value;

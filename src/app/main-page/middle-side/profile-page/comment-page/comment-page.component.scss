@@ -1,0 +1,51 @@
+.comment {
+  &__new {
+    position: relative;
+    border-bottom: 0.5px solid rgb(47, 51, 54);
+    margin: 20px 50px;
+    padding-bottom: 25px;
+
+    &-title {
+      position: absolute;
+      color: white;
+      left: 8px;
+      top: 4px;
+      font-size: 12px;
+    }
+
+    &-input {
+      width: 100%;
+      background-color: black;
+      color: white;
+      border: 1px solid white;
+      padding: 10px;
+      padding-top: 20px;
+      font-size: 16px;
+      border-radius: 6px;
+
+      &:focus {
+        border: 1px solid #fad357;
+        outline: 1px solid #fad357;
+      }
+    }
+
+    &-send {
+      position: absolute;
+      font-size: 30px;
+      border-radius: 0 5px 5px 0;
+      font-weight: bold;
+      padding-bottom: 10px;
+      color: black;
+      background-color: white;
+      border: 1px solid white;
+      width: 36px;
+      height: 55px;
+      top: 1px;
+      right: 1px;
+
+      &:hover {
+        background-color: rgb(240, 240, 240);
+      }
+    }
+  }
+}

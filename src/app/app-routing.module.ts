@@ -11,13 +11,17 @@ import { SearhPageComponent } from './main-page/middle-side/searh-page/searh-pag
 import { ProfilePageComponent } from './main-page/middle-side/profile-page/profile-page.component';
 import { EditProfileComponent } from './main-page/middle-side/profile-page/edit-profile/edit-profile.component';
 import { DefaultProfileComponent } from './main-page/middle-side/profile-page/default-profile/default-profile.component';
+import { AuthGuard } from './sign-page/auth.guard';
+import { CommentPageComponent } from './main-page/middle-side/profile-page/comment-page/comment-page.component';
+import { NotFoundComponent } from './main-page/not-found/not-found.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/signPage/signIn', pathMatch: 'full' },
+  { path: '', redirectTo: '/mainPage', pathMatch: 'full' },
   { path: 'signPage/:type', component: SignPageComponent },
   {
     path: 'mainPage',
     component: MainPageComponent,
+    canActivate: [AuthGuard],
     children: [
       { path: '', component: HomePageComponent },
       { path: 'home', component: HomePageComponent },
@@ -29,10 +33,21 @@ const routes: Routes = [
           { path: '', component: DefaultProfileComponent },
           { path: 'default', component: DefaultProfileComponent },
           { path: 'editProfile', component: EditProfileComponent },
+          {
+            path: ':id',
+            children: [
+              { path: '', component: DefaultProfileComponent },
+              {
+                path: ':id',
+                component: CommentPageComponent,
+              },
+            ],
+          },
         ],
       },
     ],
   },
+  // { path: '**', component: NotFoundComponent },
 ];
 @NgModule({ imports: [RouterModule.forRoot(routes)], exports: [RouterModule] })
 export class AppRoutingModule {}

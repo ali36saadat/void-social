@@ -2,3 +2,9 @@
 @import "../assets/ap/scss/grid";
 @import "../assets/ap/scss/responsive";
 @import "../assets/ap/scss/style";
+
+.CONTAINER {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}

@@ -24,6 +24,10 @@ import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinne
 import { SignAlertComponent } from './shared/sign-alert/sign-alert.component';
 import { DefaultProfileComponent } from './main-page/middle-side/profile-page/default-profile/default-profile.component';
 import { EditProfileComponent } from './main-page/middle-side/profile-page/edit-profile/edit-profile.component';
+import { UserFoundComponent } from './main-page/middle-side/searh-page/user-found/user-found.component';
+import { CommentPageComponent } from './main-page/middle-side/profile-page/comment-page/comment-page.component';
+import { CommentComponentComponent } from './main-page/middle-side/profile-page/comment-page/comment-component/comment-component.component';
+import { NotFoundComponent } from './main-page/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +51,10 @@ import { EditProfileComponent } from './main-page/middle-side/profile-page/edit-
     SignAlertComponent,
     DefaultProfileComponent,
     EditProfileComponent,
+    UserFoundComponent,
+    CommentPageComponent,
+    CommentComponentComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,

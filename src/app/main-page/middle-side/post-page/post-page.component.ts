@@ -17,6 +17,7 @@ import { Router } from '@angular/router';
 })
 export class PostPageComponent implements OnInit {
   @Input() contentLength = 0;
+
   newPostForm: FormGroup;
 
   constructor(
@@ -32,26 +33,20 @@ export class PostPageComponent implements OnInit {
   }
 
   onSubmit() {
-    // console.log(this.newPostForm);
+    const user = JSON.parse(localStorage.getItem('userData') || '{}');
     const date = new Date();
-    console.log(
-      'day :' +
-        date.toLocaleDateString() +
-        ' | hour :' +
-        date.getHours() +
-        ':' +
-        date.getMinutes(),
-    );
+
     const newPost = {
-      userId: 'ExBQLx1RH4OYb1NEDbMtWJz4v462',
+      userId: user.id,
       title: this.newPostForm.get('postTitle')?.value,
       context: this.newPostForm.get('postContent')?.value,
-      username: 'Ali36Saadat',
       time: {
         day: date.toLocaleDateString(),
         hour: date.getHours(),
       },
+      like: [],
     };
+
     this.http.post('http://localhost:3000/posts', newPost).subscribe((res) => {
       this.router.navigate(['/mainPage/home']);
     });

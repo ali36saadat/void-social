@@ -2,38 +2,66 @@
   <div class="profile__info">
     <div class="profile__info-top">
       <div class="profile__info-left">
-        <div class="profile__info-top-name">Ali Saadat</div>
-        <div class="profile__info-top-username">&commat;ali36saadat</div>
+        <div class="profile__info-top-name" *ngIf="profileData?.name">
+          {{ profileData?.name?.firstName }} {{ profileData?.name?.lastName }}
+        </div>
+        <div class="profile__info-top-username">
+          &commat;{{ profileData?.username }}
+        </div>
       </div>
       <div class="profile__info-right">
         <a
+          *ngIf="isMyProfile"
+          class="profile__info-right-btn"
+          (click)="logout()"
+        >
+          Log Out
+        </a>
+        <a
+          *ngIf="isMyProfile"
           routerLink="/mainPage/profile/editProfile"
           class="profile__info-right-btn"
           >Edit Profile</a
         >
+
+        <a
+          *ngIf="!isMyProfile"
+          class="profile__info-right-btn profile__info-right-btn--follow-{{
+            isFollowing
+          }}"
+          (click)="followAndUnfollow()"
+        >
+          Follow
+        </a>
       </div>
     </div>
 
-    <div class="profile__info-middle">
+    <div class="profile__info-middle" *ngIf="profileData.bio">
       <span class="profile__info-middle-bio">
         <div class="profile__info-middle-bio-title">BIO</div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
-        inventore delectus rerum nulla impedit voluptatibus, quo voluptates qui
-        quod, minus consequatur! Amet, voluptatibus ratione minima debitis vero
-        eius labore aut?
+        {{ profileData?.bio }}
       </span>
     </div>
 
     <div class="profile__info-bottom">
       <a class="profile__info-followings">
-        <span class="profile__info-bottom-number">36</span>
+        <span class="profile__info-bottom-number">{{
+          profileData?.followingLength
+        }}</span>
         <span class="profile__info-bottom-title">Following</span>
       </a>
       <a class="profile__info-followers">
-        <span class="profile__info-bottom-number">12</span>
+        <span class="profile__info-bottom-number">{{
+          profileData?.followerLength
+        }}</span>
         <span class="profile__info-bottom-title">Followers</span>
       </a>
     </div>
   </div>
-  <div class="profile__posts"><app-post-component></app-post-component></div>
+  <div class="profile__posts">
+    <app-post-component
+      *ngFor="let post of posts"
+      [post]="post"
+    ></app-post-component>
+  </div>
 </div>
