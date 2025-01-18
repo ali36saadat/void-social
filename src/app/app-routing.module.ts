@@ -17,7 +17,6 @@ import { NotFoundComponent } from './main-page/not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/mainPage', pathMatch: 'full' },
-  { path: 'signPage/:type', component: SignPageComponent },
   {
     path: 'mainPage',
     component: MainPageComponent,

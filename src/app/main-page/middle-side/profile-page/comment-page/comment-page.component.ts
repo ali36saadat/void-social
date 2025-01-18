@@ -63,7 +63,11 @@ export class CommentPageComponent implements OnInit {
         context: this.commentForm.get('commentInput')?.value,
       };
 
-      this.http.post(`http://localhost:3000/comments`, newComment).subscribe();
+      this.http
+        .post(`http://localhost:3000/comments`, newComment)
+        .subscribe((res: any) => {
+          this.comments.push(res);
+        });
       this.commentForm.reset();
     }
   }

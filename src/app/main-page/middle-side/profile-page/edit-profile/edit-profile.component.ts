@@ -47,25 +47,26 @@ export class EditProfileComponent implements OnInit {
   onSubmit() {
     const userData = localStorage.getItem('userData');
     const userDataLocal = userData ? JSON.parse(userData) : {};
-    if (userDataLocal && Object.keys(userDataLocal).length) {
-      this.http
-        .patch(`http://localhost:3000/users/OAv6XQEJqGfHlkPdZqhNqpGey6p1`, {
-          firstName: 'salam',
-          name: {
-            firstName: this.editProfileForm.get('firstName')?.value,
-            lastName: this.editProfileForm.get('lastName')?.value,
-          },
-          username: this.editProfileForm.get('username')?.value,
-          bio: this.editProfileForm.get('bio')?.value,
-        })
-        .subscribe({
-          next: (res: any) => {
-            this.editProfileData = res;
-          },
-          error: (err) => {
-            console.error('Error updating profile:', err);
-          },
-        });
-    }
+
+    console.log(this.editProfileForm);
+    // if (userDataLocal && Object.keys(userDataLocal).length) {
+    //   this.http
+    //     .patch(`http://localhost:3000/users/OAv6XQEJqGfHlkPdZqhNqpGey6p1`, {
+    //       name: {
+    //         firstName: this.editProfileForm.get('firstName')?.value,
+    //         lastName: this.editProfileForm.get('lastName')?.value,
+    //       },
+    //       username: this.editProfileForm.get('username')?.value,
+    //       bio: this.editProfileForm.get('bio')?.value,
+    //     })
+    //     .subscribe({
+    //       next: (res: any) => {
+    //         this.editProfileData = res;
+    //       },
+    //       error: (err) => {
+    //         console.error('Error updating profile:', err);
+    //       },
+    //     });
+    // }
   }
 }

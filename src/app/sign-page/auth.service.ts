@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { catchError, subscribeOn, tap } from 'rxjs/operators';
-import { throwError, BehaviorSubject } from 'rxjs';
-
+import { throwError, BehaviorSubject, map, filter, switchMap } from 'rxjs';
 import { AuthUser } from './AuthUser.model';
 
 export interface AuthResponseData {
@@ -28,6 +27,18 @@ export class AuthService {
   ) {}
 
   signup(fullName: object, username: string, email: string, password: string) {
+    this.http
+      .get(`http://localhost:3000/users?username=${username}`)
+      .pipe(
+        switchMap((res: any) => {
+          if (res.length === 0) {
+            return throwError(() => new Error('The array is empty!'));
+          }
+          catchError(this.handleError);
+          return res;
+        }),
+      )
+      .subscribe((res) => console.log(res));
     // return this.http
     //   .get(`http://localhost:3000/users/?username=${username}`)
     //   .subscribe((res: any) => {
@@ -103,7 +114,6 @@ export class AuthService {
     const expirationDate = new Date(new Date().getTime() + expiresIn * 1000);
     const user = new AuthUser(email, userId, token, expirationDate);
     this.user.next(user);
-    // this.autoLogout(expiresIn * 1000);
     localStorage.setItem('userData', JSON.stringify(user));
   }
 
