@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from '../sign-page/auth.guard';
 import { MainPageComponent } from './main-page.component';
+import { AuthGuard } from '../sign-page/auth.guard';
 import { HomePageComponent } from './middle-side/home-page/home-page.component';
-import { SearhPageComponent } from './middle-side/searh-page/searh-page.component';
 import { PostPageComponent } from './middle-side/post-page/post-page.component';
-import { CommentPageComponent } from './middle-side/profile-page/comment-page/comment-page.component';
+import { SearhPageComponent } from './middle-side/searh-page/searh-page.component';
 import { DefaultProfileComponent } from './middle-side/profile-page/default-profile/default-profile.component';
 import { EditProfileComponent } from './middle-side/profile-page/edit-profile/edit-profile.component';
+import { CommentPageComponent } from './middle-side/profile-page/comment-page/comment-page.component';
 
 const routes: Routes = [
   {
@@ -15,7 +15,7 @@ const routes: Routes = [
     component: MainPageComponent,
     canActivate: [AuthGuard],
     children: [
-      { path: 'mainPage', component: HomePageComponent },
+      { path: '', component: HomePageComponent },
       { path: 'home', component: HomePageComponent },
       { path: 'newPost', component: PostPageComponent },
       { path: 'search', component: SearhPageComponent },

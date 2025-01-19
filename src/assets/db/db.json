@@ -61,17 +61,6 @@
       "bio": ""
     },
     {
-      "id": "OAv6XQEJqGfHlkPdZqhNqpGey6p1",
-      "name": {
-        "firstName": null,
-        "lastName": null
-      },
-      "email": "asd@gmail.com",
-      "username": null,
-      "bio": null,
-      "firstName": "salam"
-    },
-    {
       "id": "JL2twdWKMldn8FY7kkKIzf4gQbI2",
       "name": {
         "firstName": "ali",
@@ -152,9 +141,7 @@
         "day": "1/15/2025",
         "hour": 10
       },
-      "like": [
-        "JL2twdWKMldn8FY7kkKIzf4gQbI2"
-      ]
+      "like": ["JL2twdWKMldn8FY7kkKIzf4gQbI2"]
     },
     {
       "id": "c461",
@@ -165,10 +152,7 @@
         "day": "1/15/2025",
         "hour": 11
       },
-      "like": [
-        "JL2twdWKMldn8FY7kkKIzf4gQbI2",
-        "kE9a7afL5YO7gpdd95yVRbefphE3"
-      ]
+      "like": ["JL2twdWKMldn8FY7kkKIzf4gQbI2", "kE9a7afL5YO7gpdd95yVRbefphE3"]
     },
     {
       "id": "939c",
@@ -179,9 +163,7 @@
         "day": "1/15/2025",
         "hour": 15
       },
-      "like": [
-        "JL2twdWKMldn8FY7kkKIzf4gQbI2"
-      ]
+      "like": ["JL2twdWKMldn8FY7kkKIzf4gQbI2"]
     },
     {
       "id": "2811",
@@ -192,9 +174,7 @@
         "day": "1/15/2025",
         "hour": 16
       },
-      "like": [
-        "JL2twdWKMldn8FY7kkKIzf4gQbI2"
-      ]
+      "like": ["JL2twdWKMldn8FY7kkKIzf4gQbI2"]
     },
     {
       "id": "5ec4",
@@ -217,6 +197,17 @@
         "hour": 12
       },
       "like": []
+    },
+    {
+      "id": "6c97",
+      "userId": "kE9a7afL5YO7gpdd95yVRbefphE3",
+      "title": "dasd",
+      "context": null,
+      "time": {
+        "day": "1/18/2025",
+        "hour": 12
+      },
+      "like": ["kE9a7afL5YO7gpdd95yVRbefphE3"]
     }
   ],
   "following": [

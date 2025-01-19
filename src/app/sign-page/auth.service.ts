@@ -27,18 +27,17 @@ export class AuthService {
   ) {}
 
   signup(fullName: object, username: string, email: string, password: string) {
-    this.http
-      .get(`http://localhost:3000/users?username=${username}`)
-      .pipe(
-        switchMap((res: any) => {
-          if (res.length === 0) {
-            return throwError(() => new Error('The array is empty!'));
-          }
-          catchError(this.handleError);
-          return res;
-        }),
+    return this.http
+      .post<AuthResponseData>(
+        `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDszLYU8Z6ypEdDI7nVatUu5Kdv1YbzVOY`,
+        {
+          email: email,
+          password: password,
+          returnSecureToken: true,
+        },
       )
-      .subscribe((res) => console.log(res));
+      .pipe(catchError(this.handleError));
+
     // return this.http
     //   .get(`http://localhost:3000/users/?username=${username}`)
     //   .subscribe((res: any) => {
@@ -86,21 +85,26 @@ export class AuthService {
     }
   }
 
-  private handleError(errorRes: HttpErrorResponse) {
+  private handleError(errorRes: HttpErrorResponse | string) {
     let errorMessage = 'An unknown error occurred!';
-    if (!errorRes.error || !errorRes.error.error) {
-      return throwError(errorMessage);
-    }
-    switch (errorRes.error.error.message) {
-      case 'EMAIL_EXISTS':
-        errorMessage = 'This email exists already';
-        break;
-      case 'EMAIL_NOT_FOUND':
-        errorMessage = 'This email does not exist.';
-        break;
-      case 'INVALID_PASSWORD':
-        errorMessage = 'This password is not correct.';
-        break;
+
+    if (errorRes instanceof HttpErrorResponse) {
+      if (!errorRes.error || !errorRes.error.error) {
+        return throwError(errorMessage);
+      }
+      switch (errorRes.error.error.message) {
+        case 'EMAIL_EXISTS':
+          errorMessage = 'This email exists already';
+          break;
+        case 'EMAIL_NOT_FOUND':
+          errorMessage = 'This email does not exist.';
+          break;
+        case 'INVALID_PASSWORD':
+          errorMessage = 'This password is not correct.';
+          break;
+      }
+    } else {
+      errorMessage = errorRes;
     }
     return throwError(errorMessage);
   }

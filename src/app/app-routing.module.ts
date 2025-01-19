@@ -19,32 +19,13 @@ const routes: Routes = [
   { path: '', redirectTo: '/mainPage', pathMatch: 'full' },
   {
     path: 'mainPage',
-    component: MainPageComponent,
-    canActivate: [AuthGuard],
-    children: [
-      { path: '', component: HomePageComponent },
-      { path: 'home', component: HomePageComponent },
-      { path: 'newPost', component: PostPageComponent },
-      { path: 'search', component: SearhPageComponent },
-      {
-        path: 'profile',
-        children: [
-          { path: '', component: DefaultProfileComponent },
-          { path: 'default', component: DefaultProfileComponent },
-          { path: 'editProfile', component: EditProfileComponent },
-          {
-            path: ':id',
-            children: [
-              { path: '', component: DefaultProfileComponent },
-              {
-                path: ':id',
-                component: CommentPageComponent,
-              },
-            ],
-          },
-        ],
-      },
-    ],
+    loadChildren: () =>
+      import('./main-page/main-page.module').then((m) => m.MainPageModule),
+  },
+  {
+    path: 'signPage',
+    loadChildren: () =>
+      import('./sign-page/sign-page.module').then((m) => m.SignPageModule),
   },
   // { path: '**', component: NotFoundComponent },
 ];

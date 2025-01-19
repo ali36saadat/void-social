@@ -23,26 +23,14 @@ import { CommentPageComponent } from './main-page/middle-side/profile-page/comme
 import { CommentComponentComponent } from './main-page/middle-side/profile-page/comment-page/comment-component/comment-component.component';
 import { NotFoundComponent } from './main-page/not-found/not-found.component';
 import { SignPageModule } from './sign-page/sign-page.module';
+import { MainPageRoutingModule } from './main-page/main-page-routing.module';
+import { MainPageModule } from './main-page/main-page.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainPageComponent,
-    LeftSideComponent,
-    MiddleSideComponent,
-    RightSideComponent,
     PyramidPageComponent,
     PryamidComponentComponent,
-    HomePageComponent,
-    PostComponentComponent,
-    ProfilePageComponent,
-    PostPageComponent,
-    SearhPageComponent,
-    DefaultProfileComponent,
-    EditProfileComponent,
-    UserFoundComponent,
-    CommentPageComponent,
-    CommentComponentComponent,
     NotFoundComponent,
   ],
   imports: [
@@ -51,7 +39,6 @@ import { SignPageModule } from './sign-page/sign-page.module';
     HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    SignPageModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -26,7 +26,6 @@ import { SignPageRoutingModule } from './sign-page-routing.module';
     CommonModule,
     ReactiveFormsModule,
     ReactiveFormsModule,
-    AppRoutingModule,
     SignPageRoutingModule,
   ],
   exports: [

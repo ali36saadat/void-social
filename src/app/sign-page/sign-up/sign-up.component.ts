@@ -154,12 +154,17 @@ export class SignUpComponent implements OnInit {
 
     const usernameValue = this.signUpForm.get('username')?.value;
 
-    this.authService.signup(
-      this.signUpForm.get('name')?.value,
-      usernameValue,
-      this.signUpForm.get('mail')?.value,
-      this.signUpForm.get('password')?.value,
-    );
+    this.authService
+      .signup(
+        this.signUpForm.get('name')?.value,
+        usernameValue,
+        this.signUpForm.get('mail')?.value,
+        this.signUpForm.get('password')?.value,
+      )
+      .subscribe((res) => {
+        console.log(res);
+      });
+
     // .subscribe(
     //   (resData: any) => {
     //     console.log(resData);
