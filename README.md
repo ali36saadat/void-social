@@ -1,27 +1,26 @@
-# TwitextAngular
+![PYRAMID TWITEXT - Headder](https://github.com/user-attachments/assets/a79e59e0-c6cf-4a01-a011-3e81fbf1bebd)
+# PYRAMID TWITEXT - Pyramid JS
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.11.
+## Description
+This project explores two approaches to solving Sudoku puzzles: Backtracking and Simulated Annealing. You can either enter a puzzle manually or generate one with customizable difficulty. Then, choose your preferred algorithm and watch it solve the board—while tracking the solving time and, for simulated annealing, the number of iterations. It’s a practical comparison between a guaranteed solution and a smart, AI-inspired heuristic.
 
-## Development server
+## Work With
+1. Backtracking & Simulated Annealing Algorithms
+2. DOM
+3. CSS Animations
+4. Tailwind
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Qucik Start
+**Requirements:** `node` 21.5.0 or higher, `npm` 10.8.3 or higher
 
-## Code scaffolding
+### Step 1: Install Live-Server Global 
+```node js
+npm install -g live-server
+```
+### Step 2: Run 
+```node js
+live-server
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# Socials
+![Socials](https://github.com/user-attachments/assets/d1facdd6-b72c-45d8-8ad5-ffb28bd3bfb8)
