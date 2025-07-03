@@ -1,16 +1,18 @@
-![PYRAMID TWITEXT - Headder](https://github.com/user-attachments/assets/a79e59e0-c6cf-4a01-a011-3e81fbf1bebd)
+![PYRAMID JS](https://github.com/user-attachments/assets/a79e59e0-c6cf-4a01-a011-3e81fbf1bebd)
+
 # PYRAMID TWITEXT - Pyramid JS
+![PYRAMID TWITEXT - Headder](https://github.com/user-attachments/assets/dfb77da3-8a8f-4e46-9e01-f417f93c1174)
 
 ## Description
-This project explores two approaches to solving Sudoku puzzles: Backtracking and Simulated Annealing. You can either enter a puzzle manually or generate one with customizable difficulty. Then, choose your preferred algorithm and watch it solve the board—while tracking the solving time and, for simulated annealing, the number of iterations. It’s a practical comparison between a guaranteed solution and a smart, AI-inspired heuristic.
+Twitext is a lightweight and user friendly social network that lets you post tweets, search for and follow other users, and interact with their content. Each user has a personal profile that includes their information and activity. You can like and comment on other users’ tweets, making it easy to engage and connect. The platform is designed to offer a simple, fast experience similar to Twitter, with essential social features built in.
 
-## Work With
-1. Backtracking & Simulated Annealing Algorithms
-2. DOM
-3. CSS Animations
-4. Tailwind
+## Work On
+1. Angular : 
+2. Typescript : 
+3. Firebase : 
+4. Sass : 
 
-## Qucik Start
+## Quick Start
 **Requirements:** `node` 21.5.0 or higher, `npm` 10.8.3 or higher
 
 ### Step 1: Install Live-Server Global 
