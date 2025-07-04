@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { catchError, subscribeOn, tap } from 'rxjs/operators';
 import { throwError, BehaviorSubject, map, filter, switchMap } from 'rxjs';
 import { AuthUser } from './AuthUser.model';
+import { environment } from '../../environments/environment';
 
 export interface AuthResponseData {
   kind: string;
@@ -27,15 +28,14 @@ export class AuthService {
   ) {}
 
   signup(fullName: object, username: string, email: string, password: string) {
+    const firebase_sign_up = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${environment.FIREBASE_API}`;
+
     return this.http
-      .post<AuthResponseData>(
-        `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDszLYU8Z6ypEdDI7nVatUu5Kdv1YbzVOY`,
-        {
-          email: email,
-          password: password,
-          returnSecureToken: true,
-        },
-      )
+      .post<AuthResponseData>(firebase_sign_up, {
+        email: email,
+        password: password,
+        returnSecureToken: true,
+      })
       .pipe(catchError(this.handleError));
 
     // return this.http
@@ -51,15 +51,13 @@ export class AuthService {
   }
 
   signIn(mail: string, password: string) {
+    const firebase_sign_in = `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${environment.FIREBASE_API}`;
     return this.http
-      .post(
-        'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDszLYU8Z6ypEdDI7nVatUu5Kdv1YbzVOY',
-        {
-          email: mail,
-          password: password,
-          returnSecureToken: true,
-        },
-      )
+      .post(firebase_sign_in, {
+        email: mail,
+        password: password,
+        returnSecureToken: true,
+      })
       .pipe(
         catchError(this.handleError),
         tap((resData: any) => {
